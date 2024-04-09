@@ -19,12 +19,13 @@ int sumOfProg(unsigned long long int arr[], int size) {
 }
 
 // Tail recursion to calculate the sum of array elements (GEOMETRIC)
-int tailRecursion(int a1, int r, int i) {
+int tailRecursion(int a1, int r, int i, int acc) {
     if (i == 0)
-        return a1;
+        return acc;
     else
-        return r * tailRecursion(a1, r, i - 1);
+        return tailRecursion(a1, r, i - 1, acc * r);
 }
+
 
 // Linear recursion to calculate the sum of array elements (ARITHMETIC)
 int linearRecursion(int a1, int d, int i) {
